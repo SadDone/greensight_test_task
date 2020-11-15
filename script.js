@@ -29,7 +29,7 @@ $('.btnSend').on('click', () => {
             success: (data) => {
                 console.log(data)
     
-                switch(data) { // в зависимости от ответа выводим ошибку
+                switch(data) { // в зависимости от ответа выводим ошибку 
                     case "OK":
                         $('.form').addClass('d-none');
                         $('.notificationError').addClass('d-none');
@@ -38,7 +38,7 @@ $('.btnSend').on('click', () => {
                         break;
                     case "Error":
                         if(!$('div').is('.emailExists')) {
-                            $('.form').before('<div class="alert alert-danger text-center notificationError emailExists"> Пользователь с такой почтой уже существует </div>');
+                            $('.form').before('<div class="alert alert-danger text-center notificationError emailExists"> Пользователя с такой почтой не существует </div>');
                         }
                         break;
                     case "Error: incorrect email":

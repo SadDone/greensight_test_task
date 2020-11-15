@@ -46,11 +46,11 @@ if($_POST['password'] != $_POST['retryPassword']) {
     exit();
 }
 
-$flag = TRUE;
+$flag = FALSE;
 
 foreach($arrayUsers as $user) {
     if($email == $user['email']) {
-        $flag = FALSE;
+        $flag = TRUE;
     }
 }
 
@@ -59,7 +59,7 @@ if($flag) {
     echo "OK";
     exit();
 } else {
-    writeLog(" Учетная запись с почтой $email уже существует");
+    writeLog(" Учетной записи с почтой $email не существует");
     echo "Error";
     exit();
 }
